@@ -1,0 +1,70 @@
+.page-create {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+
+  aside {
+    flex: 7;
+
+    background: gray;
+    color: #fff;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 120px 80px;
+
+    img {
+      max-width: 320px;
+    }
+
+    strong {
+      font: 700 36px "Nunito Sans", Sans-serif;
+      line-height: 42px;
+      margin-top: 16px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 32px;
+      margin-top: 10px;
+      color: #f8f8f8;
+    }
+  }
+
+  main {
+    display: flex;
+    justify-content: center;
+
+    padding: 0 32px;
+    align-items: center;
+    flex: 8;
+  }
+
+  .name-room {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    max-width: 320px;
+
+    align-items: stretch;
+
+    > img {
+      align-self: center;
+      margin-bottom: 50px;
+    }
+
+    h1 {
+      font-size: 25px;
+      align-self: center;
+      margin-bottom: 20px;
+    }
+
+    p {
+      align-self: center;
+      font-size: 14px;
+      color: gray;
+    }
+  }
+}

@@ -3,8 +3,9 @@ import googleIconImg from "../assets/images/google-icon.svg";
 import logoImg from "../assets/images/logo.svg";
 
 import { Button } from "../components/Button";
+import { Input } from "../components/Input";
 
-import "../styles/auth.scss";
+import "../styles/signIn.scss";
 
 export function Signin() {
   return (
@@ -24,7 +25,7 @@ export function Signin() {
           <div>
             <p>ou entre em uma sala existente</p>
             <form>
-              <input type="text" placeholder="Digite o código da sala" />
+              <Input type="text" placeholder="Digite o código da sala" />
               <Button type="submit">Entrar na sala</Button>
             </form>
           </div>
