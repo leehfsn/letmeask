@@ -6,7 +6,7 @@ import { Button } from "../components/Button";
 
 import "../styles/auth.scss";
 
-export function Home() {
+export function Signin() {
   return (
     <div className="page-auth">
       <aside>
