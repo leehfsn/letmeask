@@ -17,10 +17,10 @@ export function Home() {
       <main>
         <div className="login-content">
           <img src={logoImg} alt="LetmeAsk" />
-          <button className="create-room">
+          <Button className="create-room">
             <img src={googleIconImg} alt="logo google" />
             Use o Google e crie sua sala
-          </button>
+          </Button>
           <div>
             <p>ou entre em uma sala existente</p>
             <form>
