@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import illustrationImg from "../assets/images/illustration.svg";
 import logoImg from "../assets/images/logo.svg";
 
@@ -21,7 +23,7 @@ export function Createroom() {
           <Input placeholder="Nome da sala" />
           <Button>Criar sala</Button>
           <p>
-            Tem o código de uma sala? <a href="a">Clique Aqui</a>
+            Tem o código de uma sala? <Link to="/">Clique Aqui</Link>
           </p>
         </div>
       </main>

@@ -9,13 +9,13 @@ export function Answerroom() {
     <>
       <header>
         <img src={logoImg} alt="LetmeAsk" />
-        <div className="header">
+        <div>
           <Input />
-          <Button> Encerrar sala </Button>
+          <Button>Encerrar sala</Button>
         </div>
       </header>
       <main>
-        <h1> testeeeeee</h1>
+        <h1>SALA</h1>
       </main>
     </>
   );

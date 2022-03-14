@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+
 import illustrationImg from "../assets/images/illustration.svg";
 import googleIconImg from "../assets/images/google-icon.svg";
 import logoImg from "../assets/images/logo.svg";
@@ -8,6 +10,12 @@ import { Input } from "../components/Input";
 import "../styles/signIn.scss";
 
 export function Signin() {
+  const navigate = useNavigate();
+
+  function navToCreateRoom() {
+    navigate("/room/create");
+  }
+
   return (
     <div className="page-auth">
       <aside>
@@ -18,7 +26,7 @@ export function Signin() {
       <main>
         <div className="login-content">
           <img src={logoImg} alt="LetmeAsk" />
-          <Button className="create-room">
+          <Button onClick={navToCreateRoom} className="create-room">
             <img src={googleIconImg} alt="logo google" />
             Use o Google e crie sua sala
           </Button>

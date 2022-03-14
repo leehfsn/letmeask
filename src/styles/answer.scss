@@ -4,9 +4,7 @@ header {
   align-items: center;
   justify-content: space-between;
 
-  padding: 10px;
-
-  //border-bottom: 1px solid gray;
+  border-bottom: 1px solid #835afd;
   height: 75px;
   width: 100%;
 
@@ -17,24 +15,35 @@ header {
 
   div {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 0;
+    justify-content: space-around;
+
+    input {
+      background: none;
+      border: 1px solid #835afd;
+
+      height: 40px;
+      width: 100px;
+
+      margin-bottom: 0;
+    }
+
+    button {
+      background: none;
+      border: 1px solid #835afd;
+      height: 40px;
+      width: 100px;
+
+      margin-right: 45px;
+      margin-bottom: 0;
+      margin-left: 7px;
+
+      font-size: 12px;
+
+      color: #835afd;
+    }
   }
+}
 
-  input {
-    height: 40px;
-    width: 100px;
-  }
-
-  button {
-    background: none;
-    border: 1px solid #835afd;
-    height: 40px;
-    width: 100px;
-
-    margin-right: 45px;
-
-    font-size: 12px;
-    color: #835afd;
-  }
+h1 {
+  padding: 10px;
 }
