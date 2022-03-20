@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import illustrationImg from "../assets/images/illustration.svg";
 import logoImg from "../assets/images/logo.svg";
@@ -9,6 +9,10 @@ import { Button } from "../components/Button";
 import "../styles/createroom.scss";
 
 export function Createroom() {
+  const navigate = useNavigate();
+  function navToAnswerRoom() {
+    navigate("/room/answer");
+  }
   return (
     <div className="page-create">
       <aside>
@@ -21,7 +25,7 @@ export function Createroom() {
           <img src={logoImg} alt="LetmeAsk" />
           <h1> Crie uma nova sala</h1>
           <Input placeholder="Nome da sala" />
-          <Button>Criar sala</Button>
+          <Button onClick={navToAnswerRoom}>Criar sala</Button>
           <p>
             Tem o código de uma sala? <Link to="/">Clique Aqui</Link>
           </p>

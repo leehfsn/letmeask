@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { signInWithPopup } from "firebase/auth";
 
 import illustrationImg from "../assets/images/illustration.svg";
 import googleIconImg from "../assets/images/google-icon.svg";
@@ -8,12 +9,21 @@ import { Button } from "../components/Button";
 import { Input } from "../components/Input";
 
 import "../styles/signIn.scss";
+import { firebase, auth } from "../services/firebase";
 
 export function Signin() {
   const navigate = useNavigate();
 
-  function navToCreateRoom() {
+  function handletoCreateRoomWithGoogle() {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    provider.setCustomParameters({ prompt: "select_account" });
+
+    signInWithPopup(auth, provider);
     navigate("/room/create");
+  }
+
+  function navToAnswerRoom() {
+    navigate("/room/answer");
   }
 
   return (
@@ -26,7 +36,10 @@ export function Signin() {
       <main>
         <div className="login-content">
           <img src={logoImg} alt="LetmeAsk" />
-          <Button onClick={navToCreateRoom} className="create-room">
+          <Button
+            onClick={handletoCreateRoomWithGoogle}
+            className="create-room"
+          >
             <img src={googleIconImg} alt="logo google" />
             Use o Google e crie sua sala
           </Button>
@@ -34,7 +47,9 @@ export function Signin() {
             <p>ou entre em uma sala existente</p>
             <form>
               <Input type="text" placeholder="Digite o código da sala" />
-              <Button type="submit">Entrar na sala</Button>
+              <Button onClick={navToAnswerRoom} type="submit">
+                Entrar na sala
+              </Button>
             </form>
           </div>
         </div>
