@@ -1,5 +1,5 @@
+import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { signInWithPopup } from "firebase/auth";
 
 import illustrationImg from "../assets/images/illustration.svg";
 import googleIconImg from "../assets/images/google-icon.svg";
@@ -7,24 +7,21 @@ import logoImg from "../assets/images/logo.svg";
 
 import { Button } from "../components/Button";
 import { Input } from "../components/Input";
+import { AuthContext } from "../App";
 
 import "../styles/signIn.scss";
-import { firebase, auth } from "../services/firebase";
 
 export function Signin() {
   const navigate = useNavigate();
+  const { signInWithGoogle, user } = useContext(AuthContext);
 
-  function handletoCreateRoomWithGoogle() {
-    const provider = new firebase.auth.GoogleAuthProvider();
-    provider.setCustomParameters({ prompt: "select_account" });
-
-    signInWithPopup(auth, provider);
-    navigate("/room/create");
+  async function handleCreateRoom() {
+    if (!user) {
+      await signInWithGoogle();
+    }
+    navigate("room/create");
   }
-
-  function navToAnswerRoom() {
-    navigate("/room/answer");
-  }
+  navigate("/room/answer");
 
   return (
     <div className="page-auth">
@@ -36,10 +33,7 @@ export function Signin() {
       <main>
         <div className="login-content">
           <img src={logoImg} alt="LetmeAsk" />
-          <Button
-            onClick={handletoCreateRoomWithGoogle}
-            className="create-room"
-          >
+          <Button onClick={handleCreateRoom} className="create-room">
             <img src={googleIconImg} alt="logo google" />
             Use o Google e crie sua sala
           </Button>
@@ -47,9 +41,7 @@ export function Signin() {
             <p>ou entre em uma sala existente</p>
             <form>
               <Input type="text" placeholder="Digite o código da sala" />
-              <Button onClick={navToAnswerRoom} type="submit">
-                Entrar na sala
-              </Button>
+              <Button type="submit">Entrar na sala</Button>
             </form>
           </div>
         </div>
