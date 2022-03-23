@@ -16,7 +16,10 @@
   <li>Estilização do componente atrelada a pasta do próprio componente, melhor organização</li>
   <li>Pasta styles apenas para páginas </li>
   <li>Diferentes tipos de usuários (adm e espectador) e variação de permissões no projeto</li>
+  </ul>
     
   <h2>Sugestões</h2>
-   <li>Criar componente Switch para alterar tema entre light e dark</li>
+    <ul>
+  <li>Criar componente Switch para alterar tema entre light e dark</li>
+  </ul>
     </body>
