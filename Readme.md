@@ -2,7 +2,7 @@
 
 <h2>Descrição</h2>
 <ul> 
-  <li>Projeto feito para o NLW da RocketSeat, para estudar e desenvolver conhecimentos em TypeScript </li>
+  <li>Projeto feito para o NLW da RocketSeat, para estudar e desenvolver conhecimentos em TypeScript e React.Js </li>
   <li>Utilizado scss para edição de estilos</li>
   <li>Integração com Firebase</li>
   <li>Página web com foco para uso de criadores de conteúdo em stream, fins melhorar o filtro de perguntas feitas durante a live</li>
@@ -12,8 +12,11 @@
   <h2>Features</h2>
   <ul>
   <li>Criação de página de login na plataforma, com opção de integração direta com conta google, usando firebase</li>
-  <li>Criação de componentes para serem reutilizados em várias páginas da plataforma utilizando o export/import</li>
+  <li>Criação de componentes para serem reutilizados em várias páginas da plataforma utilizando o export/import do react</li>
   <li>Estilização do componente atrelada a pasta do próprio componente, melhor organização</li>
   <li>Pasta styles apenas para páginas </li>
   <li>Diferentes tipos de usuários (adm e espectador) e variação de permissões no projeto</li>
+    
+  <h2>Sugestões</h2>
+   <li>Criar componente Switch para alterar tema entre light e dark</li>
     </body>
