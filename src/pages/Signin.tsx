@@ -1,4 +1,3 @@
-import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
 import illustrationImg from "../assets/images/illustration.svg";
@@ -7,13 +6,13 @@ import logoImg from "../assets/images/logo.svg";
 
 import { Button } from "../components/Button";
 import { Input } from "../components/Input";
-import { AuthContext } from "../App";
+import { useAuth } from "../hooks/useAuth";
 
 import "../styles/signIn.scss";
 
 export function Signin() {
   const navigate = useNavigate();
-  const { signInWithGoogle, user } = useContext(AuthContext);
+  const { signInWithGoogle, user } = useAuth();
 
   async function handleCreateRoom() {
     if (!user) {
@@ -21,7 +20,6 @@ export function Signin() {
     }
     navigate("room/create");
   }
-  navigate("/room/answer");
 
   return (
     <div className="page-auth">

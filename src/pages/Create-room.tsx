@@ -1,4 +1,3 @@
-import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 import illustrationImg from "../assets/images/illustration.svg";
@@ -6,17 +5,18 @@ import logoImg from "../assets/images/logo.svg";
 
 import { Input } from "../components/Input";
 import { Button } from "../components/Button";
-import { AuthContext } from "../App";
+//import { useAuth } from "../hooks/useAuth";
 
 import "../styles/createroom.scss";
 
 export function Createroom() {
-  const { user } = useContext(AuthContext);
+  //const { user } = useAuth;
   const navigate = useNavigate();
 
   function navToAnswerRoom() {
     navigate("/room/answer");
   }
+
   return (
     <div className="page-create">
       <aside>
@@ -27,7 +27,6 @@ export function Createroom() {
       <main>
         <div className="name-room">
           <img src={logoImg} alt="LetmeAsk" />
-          <h3>Bem-vindo(a)😃 {user?.name}</h3>
           <h1> Crie uma nova sala</h1>
           <Input placeholder="Nome da sala" />
           <Button onClick={navToAnswerRoom}>Criar sala</Button>
